@@ -15,7 +15,22 @@ Route::get('lang/{locale}', function ($locale) {
 })->name('lang.switch');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $user = auth()->user();
+    if ($user->role === 'patient') {
+        $stats = [
+            'total_appointments' => \App\Models\Appointment::where('patient_id', $user->id)->count(),
+            'pending_appointments' => \App\Models\Appointment::where('patient_id', $user->id)->where('status', 'pending')->count(),
+            'confirmed_appointments' => \App\Models\Appointment::where('patient_id', $user->id)->where('status', 'confirmed')->count(),
+        ];
+    } else {
+        $stats = [
+            'total_appointments' => \App\Models\Appointment::count(),
+            'pending_appointments' => \App\Models\Appointment::where('status', 'pending')->count(),
+            'total_patients' => \App\Models\User::where('role', 'patient')->count(),
+            'total_doctors' => \App\Models\User::where('role', 'doctor')->count(),
+        ];
+    }
+    return view('dashboard', compact('stats'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

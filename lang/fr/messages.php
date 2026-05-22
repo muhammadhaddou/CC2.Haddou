@@ -13,7 +13,7 @@ return [
     'actions' => 'Actions',
     'edit' => 'Modifier',
     'delete' => 'Supprimer',
-    'confirm_delete' => 'Êtes-vous sûr de vouloir supprimer ce rendez-vous ?',
+    'confirm_delete' => 'Voulez-vous vraiment supprimer ce rendez-vous ?',
     'cancel' => 'Annuler',
     'save' => 'Enregistrer',
     'login' => 'Connexion',
@@ -23,4 +23,20 @@ return [
     'language' => 'Langue',
     'english' => 'Anglais',
     'french' => 'Français',
+
+    // Email strings
+    'appointment_confirmation' => 'Confirmation de Rendez-vous',
+    'hello' => 'Bonjour',
+    'appointment_success_email' => 'Votre rendez-vous a été créé avec succès.',
+    'thank_you' => 'Merci.',
+
+    // Additional strings
+    'no_appointments' => 'Aucun rendez-vous trouvé.',
+    'appointment_created_success' => 'Rendez-vous créé avec succès.',
+    'appointment_updated_success' => 'Rendez-vous mis à jour avec succès.',
+    'appointment_deleted_success' => 'Rendez-vous supprimé avec succès.',
+    'unauthorized_action' => 'Action non autorisée.',
+    'pending' => 'En attente',
+    'confirmed' => 'Confirmé',
+    'cancelled' => 'Annulé',
 ];

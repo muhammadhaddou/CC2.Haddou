@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Appointment Confirmation</title>
+    <title>{{ __('messages.appointment_confirmation') }}</title>
 </head>
 <body>
-    <h2>Hello {{ $appointment->patient->name }},</h2>
-    <p>Your appointment has been successfully created.</p>
+    <h2>{{ __('messages.hello') }} {{ $appointment->patient->name }},</h2>
+    <p>{{ __('messages.appointment_success_email') }}</p>
     <ul>
-        <li><strong>Doctor:</strong> {{ $appointment->doctor->name }}</li>
-        <li><strong>Service:</strong> {{ $appointment->service->name }}</li>
-        <li><strong>Date:</strong> {{ $appointment->date }}</li>
-        <li><strong>Time:</strong> {{ $appointment->time }}</li>
+        <li><strong>{{ __('messages.doctors') }}:</strong> {{ $appointment->doctor->name }}</li>
+        <li><strong>{{ __('messages.services') }}:</strong> {{ $appointment->service->name }}</li>
+        <li><strong>{{ __('messages.date') }}:</strong> {{ $appointment->date }}</li>
+        <li><strong>{{ __('messages.time') }}:</strong> {{ $appointment->time }}</li>
     </ul>
-    <p>Thank you.</p>
+    <p>{{ __('messages.thank_you') }}</p>
 </body>
 </html>

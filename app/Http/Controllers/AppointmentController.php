@@ -15,6 +15,10 @@ class AppointmentController extends Controller
     {
         $query = Appointment::with(['patient', 'doctor', 'service'])->latest();
 
+        if (auth()->user()->role === 'patient') {
+            $query->where('patient_id', auth()->id());
+        }
+
         if ($request->has('search') && $request->search != '') {
             $search = $request->search;
             $query->whereHas('patient', function ($q) use ($search) {
@@ -58,7 +62,7 @@ class AppointmentController extends Controller
         // Send confirmation email
         Mail::to($appointment->patient->email)->queue(new AppointmentCreated($appointment));
 
-        return redirect()->route('appointments.index')->with('success', 'Appointment created successfully.');
+        return redirect()->route('appointments.index')->with('success', __('messages.appointment_created_success'));
     }
 
     public function update(Request $request, Appointment $appointment)
@@ -71,13 +75,17 @@ class AppointmentController extends Controller
 
         $appointment->update($validated);
 
-        return redirect()->route('appointments.index')->with('success', 'Appointment updated successfully.');
+        return redirect()->route('appointments.index')->with('success', __('messages.appointment_updated_success'));
     }
 
     public function destroy(Appointment $appointment)
     {
+        if (auth()->user()->role === 'patient' && $appointment->patient_id !== auth()->id()) {
+            abort(403, __('messages.unauthorized_action'));
+        }
+
         $appointment->delete();
 
-        return redirect()->route('appointments.index')->with('success', 'Appointment deleted successfully.');
+        return redirect()->route('appointments.index')->with('success', __('messages.appointment_deleted_success'));
     }
 }

@@ -30,7 +30,7 @@ class AppointmentCreated extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Appointment Created',
+            subject: __('messages.appointment_confirmation'),
         );
     }
 

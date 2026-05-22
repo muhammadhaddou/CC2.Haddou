@@ -23,4 +23,20 @@ return [
     'language' => 'Language',
     'english' => 'English',
     'french' => 'French',
+
+    // Email strings
+    'appointment_confirmation' => 'Appointment Confirmation',
+    'hello' => 'Hello',
+    'appointment_success_email' => 'Your appointment has been successfully created.',
+    'thank_you' => 'Thank you.',
+
+    // Additional strings
+    'no_appointments' => 'No appointments found.',
+    'appointment_created_success' => 'Appointment created successfully.',
+    'appointment_updated_success' => 'Appointment updated successfully.',
+    'appointment_deleted_success' => 'Appointment deleted successfully.',
+    'unauthorized_action' => 'Unauthorized action.',
+    'pending' => 'Pending',
+    'confirmed' => 'Confirmed',
+    'cancelled' => 'Cancelled',
 ];

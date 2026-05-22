@@ -1,0 +1,43 @@
+<?php
+return [
+    'dashboard' => 'لوحة القيادة',
+    'appointments' => 'المواعيد',
+    'services' => 'الخدمات',
+    'patients' => 'المرضى',
+    'doctors' => 'الأطباء',
+    'quick_add' => 'إضافة سريعة',
+    'search' => 'بحث...',
+    'date' => 'التاريخ',
+    'time' => 'الوقت',
+    'status' => 'الحالة',
+    'actions' => 'إجراءات',
+    'edit' => 'تعديل',
+    'delete' => 'حذف',
+    'confirm_delete' => 'هل أنت متأكد أنك تريد حذف هذا الموعد؟',
+    'cancel' => 'إلغاء',
+    'save' => 'حفظ',
+    'login' => 'تسجيل الدخول',
+    'register' => 'إنشاء حساب',
+    'profile' => 'الملف الشخصي',
+    'logout' => 'تسجيل الخروج',
+    'language' => 'اللغة',
+    'english' => 'الإنجليزية',
+    'french' => 'الفرنسية',
+    'arabic' => 'العربية',
+
+    // Email strings
+    'appointment_confirmation' => 'تأكيد الموعد',
+    'hello' => 'مرحباً',
+    'appointment_success_email' => 'تم إنشاء موعدك بنجاح.',
+    'thank_you' => 'شكراً لك.',
+
+    // Additional strings
+    'no_appointments' => 'لم يتم العثور على مواعيد.',
+    'appointment_created_success' => 'تم إنشاء الموعد بنجاح.',
+    'appointment_updated_success' => 'تم تحديث الموعد بنجاح.',
+    'appointment_deleted_success' => 'تم حذف الموعد بنجاح.',
+    'unauthorized_action' => 'إجراء غير مصرح به.',
+    'pending' => 'قيد الانتظار',
+    'confirmed' => 'مؤكد',
+    'cancelled' => 'ملغى',
+];

@@ -40,6 +40,9 @@
                         <x-dropdown-link :href="route('lang.switch', 'fr')">
                             {{ __('messages.french') }}
                         </x-dropdown-link>
+                        <x-dropdown-link :href="route('lang.switch', 'ar')">
+                            {{ __('messages.arabic') }}
+                        </x-dropdown-link>
                     </x-slot>
                 </x-dropdown>
             </div>

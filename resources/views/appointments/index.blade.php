@@ -33,15 +33,19 @@
                 {{ __('messages.quick_add') }}
             </h2>
 
-            <div class="mt-6">
-                <x-input-label for="patient_id" :value="__('messages.patients')" />
-                <select id="patient_id" name="patient_id" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
-                    <option value="">-- Select --</option>
-                    @foreach($patients as $patient)
-                        <option value="{{ $patient->id }}">{{ $patient->name }}</option>
-                    @endforeach
-                </select>
-            </div>
+            @if(auth()->user()->role === 'doctor')
+                <div class="mt-6">
+                    <x-input-label for="patient_id" :value="__('messages.patients')" />
+                    <select id="patient_id" name="patient_id" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
+                        <option value="">-- Select --</option>
+                        @foreach($patients as $patient)
+                            <option value="{{ $patient->id }}">{{ $patient->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            @else
+                <input type="hidden" name="patient_id" value="{{ auth()->id() }}">
+            @endif
 
             <div class="mt-4">
                 <x-input-label for="doctor_id" :value="__('messages.doctors')" />

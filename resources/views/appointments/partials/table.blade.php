@@ -21,7 +21,7 @@
                         @if($appointment->status == 'confirmed') bg-green-100 text-green-800 
                         @elseif($appointment->status == 'cancelled') bg-red-100 text-red-800 
                         @else bg-yellow-100 text-yellow-800 @endif">
-                        {{ ucfirst($appointment->status) }}
+                        {{ __('messages.' . $appointment->status) }}
                     </span>
                 </td>
                 <td class="px-6 py-4 text-right">
@@ -30,7 +30,7 @@
             </tr>
         @empty
             <tr>
-                <td colspan="6" class="px-6 py-4 text-center text-gray-500">No appointments found.</td>
+                <td colspan="6" class="px-6 py-4 text-center text-gray-500">{{ __('messages.no_appointments') }}</td>
             </tr>
         @endforelse
     </tbody>
