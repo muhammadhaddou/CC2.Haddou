@@ -25,12 +25,12 @@ return [
     'french' => 'الفرنسية',
     'arabic' => 'العربية',
     'select' => 'اختر',
-    'service_consultation' => 'استشارة عامة',
-    'service_scaling' => 'تنظيف وتلميع الأسنان',
-    'service_extraction' => 'خلع الأسنان',
-    'service_whitening' => 'تبييض الأسنان',
-    'service_implant' => 'زراعة الأسنان',
-    'service_root_canal' => 'علاج الجذور',
+    'service_general' => 'استشارة عامة',
+    'service_cardiology' => 'فحص القلب',
+    'service_pediatric' => 'طب الأطفال',
+    'service_dermatology' => 'طب الأمراض الجلدية',
+    'service_blood_test' => 'تحليل دم / مختبر',
+    'service_radiology' => 'أشعة وتصوير طبي',
 
     // Email strings
     'appointment_confirmation' => 'تأكيد الموعد',

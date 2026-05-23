@@ -25,12 +25,12 @@ return [
     'french' => 'French',
     'arabic' => 'Arabic',
     'select' => 'Select',
-    'service_consultation' => 'General Consultation',
-    'service_scaling' => 'Scaling & Polishing',
-    'service_extraction' => 'Tooth Extraction',
-    'service_whitening' => 'Teeth Whitening',
-    'service_implant' => 'Dental Implant',
-    'service_root_canal' => 'Root Canal Treatment',
+    'service_general' => 'General Consultation',
+    'service_cardiology' => 'Cardiology Checkup',
+    'service_pediatric' => 'Pediatric Care',
+    'service_dermatology' => 'Dermatology',
+    'service_blood_test' => 'Blood Test / Lab',
+    'service_radiology' => 'Radiology & X-Ray',
 
     // Email strings
     'appointment_confirmation' => 'Appointment Confirmation',

@@ -12,39 +12,39 @@ class RealServicesSeeder extends Seeder
         $services = [
             [
                 'id' => 1,
-                'name' => 'messages.service_consultation',
-                'description' => 'Examen dentaire complet de routine',
+                'name' => 'messages.service_general',
+                'description' => 'Examen médical général de routine',
                 'duration' => 30,
             ],
             [
                 'id' => 2,
-                'name' => 'messages.service_scaling',
-                'description' => 'Nettoyage en profondeur des dents',
+                'name' => 'messages.service_cardiology',
+                'description' => 'Consultation avec un cardiologue',
                 'duration' => 45,
             ],
             [
                 'id' => 3,
-                'name' => 'messages.service_extraction',
-                'description' => 'Extraction de dent endommagée ou de sagesse',
-                'duration' => 60,
+                'name' => 'messages.service_pediatric',
+                'description' => 'Soins et consultations pour enfants',
+                'duration' => 30,
             ],
             [
                 'id' => 4,
-                'name' => 'messages.service_whitening',
-                'description' => 'Traitement esthétique de blanchiment professionnel',
-                'duration' => 90,
+                'name' => 'messages.service_dermatology',
+                'description' => 'Examen de la peau et traitements',
+                'duration' => 30,
             ],
             [
                 'id' => 5,
-                'name' => 'messages.service_implant',
-                'description' => 'Chirurgie pour la pose d\'un implant dentaire',
-                'duration' => 120,
+                'name' => 'messages.service_blood_test',
+                'description' => 'Prise de sang et analyses de laboratoire',
+                'duration' => 15,
             ],
             [
                 'id' => 6,
-                'name' => 'messages.service_root_canal',
-                'description' => 'Traitement endodontique pour sauver une dent infectée',
-                'duration' => 90,
+                'name' => 'messages.service_radiology',
+                'description' => 'Échographie, radiographie et imagerie médicale',
+                'duration' => 45,
             ]
         ];
 

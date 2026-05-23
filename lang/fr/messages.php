@@ -25,12 +25,12 @@ return [
     'french' => 'Français',
     'arabic' => 'Arabe',
     'select' => 'Sélectionner',
-    'service_consultation' => 'Consultation Générale',
-    'service_scaling' => 'Détartrage & Polissage',
-    'service_extraction' => 'Extraction Dentaire',
-    'service_whitening' => 'Blanchiment Dentaire',
-    'service_implant' => 'Pose d\'Implant',
-    'service_root_canal' => 'Traitement de Canal',
+    'service_general' => 'Consultation Générale',
+    'service_cardiology' => 'Consultation Cardiologie',
+    'service_pediatric' => 'Pédiatrie & Soins Enfants',
+    'service_dermatology' => 'Dermatologie',
+    'service_blood_test' => 'Analyse de Sang / Labo',
+    'service_radiology' => 'Radiologie & Échographie',
 
     // Email strings
     'appointment_confirmation' => 'Confirmation de Rendez-vous',
