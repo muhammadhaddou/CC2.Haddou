@@ -170,19 +170,16 @@
                 let query = searchInput.value;
 
                 let status = '{{ request('status') }}';
-                let params = new URLSearchParams({ search: query });
-                if (status) params.append('status', status);
+                let params = { search: query };
+                if (status) params.status = status;
 
-                fetch('{{ route('appointments.index') }}?' + params.toString(), {
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
-                    }
+                axios.get('{{ route('appointments.index') }}', {
+                    params: params
                 })
-                .then(response => response.json())
-                .then(data => {
-                    tableContainer.innerHTML = data.html;
+                .then(function (response) {
+                    tableContainer.innerHTML = response.data.html;
                 })
-                .catch(error => {
+                .catch(function (error) {
                     console.error(error);
                 });
             });
