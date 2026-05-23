@@ -12,15 +12,13 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Inter', ...defaultTheme.fontFamily.sans],
+                sans: ['Poppins', ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                premium: {
-                    navy: '#0f172a',    // slate-900
-                    primary: '#4f46e5', // indigo-600
-                    secondary: '#06b6d4', // cyan-500
-                    light: '#f8fafc',   // slate-50
-                    glass: 'rgba(255, 255, 255, 0.7)',
+                dentist: {
+                    navy: '#001D38',
+                    blue: '#007bff',
+                    light: '#f9f9ff',
                 }
             }
         },

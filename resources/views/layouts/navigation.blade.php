@@ -1,13 +1,13 @@
-<div class="bg-premium-navy text-white text-xs py-2">
+<div class="bg-dentist-navy text-white text-xs py-2">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <div class="flex space-x-4 rtl:space-x-reverse">
-            <a href="tel:+123456789" class="hover:text-premium-primary transition">+123 456 789</a>
+            <a href="tel:+123456789" class="hover:text-dentist-blue transition">+123 456 789</a>
             <span class="text-gray-400">|</span>
-            <a href="mailto:support@clinic.com" class="hover:text-premium-primary transition">support@clinic.com</a>
+            <a href="mailto:support@clinic.com" class="hover:text-dentist-blue transition">support@clinic.com</a>
         </div>
         <div class="flex space-x-4 rtl:space-x-reverse">
-            <a href="#" class="hover:text-premium-primary transition">Facebook</a>
-            <a href="#" class="hover:text-premium-primary transition">Twitter</a>
+            <a href="#" class="hover:text-dentist-blue transition">Facebook</a>
+            <a href="#" class="hover:text-dentist-blue transition">Twitter</a>
         </div>
     </div>
 </div>
@@ -19,8 +19,8 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}" class="text-2xl font-bold text-premium-navy tracking-wider">
-                        <span class="text-premium-primary">Clinic</span>Offshoring
+                    <a href="{{ route('dashboard') }}" class="text-2xl font-bold text-dentist-navy tracking-wider">
+                        <span class="text-dentist-blue">Clinic</span>Offshoring
                     </a>
                 </div>
 
