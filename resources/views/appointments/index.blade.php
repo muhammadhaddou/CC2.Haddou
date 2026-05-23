@@ -1,9 +1,9 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-bold text-2xl text-dentist-navy leading-tight flex justify-between items-center">
+        <h2 class="font-bold text-2xl text-premium-navy leading-tight flex justify-between items-center">
             {{ __('messages.appointments') }}
             
-            <button x-data="" x-on:click.prevent="$dispatch('open-modal', 'quick-add-appointment')" class="bg-dentist-blue hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-full text-sm shadow-md transition transform hover:-translate-y-0.5">
+            <button x-data="" x-on:click.prevent="$dispatch('open-modal', 'quick-add-appointment')" class="bg-premium-primary hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-full text-sm shadow-md transition transform hover:-translate-y-0.5">
                 {{ __('messages.quick_add') }}
             </button>
         </h2>
@@ -126,7 +126,7 @@
                     {{ __('messages.cancel') }}
                 </x-secondary-button>
 
-                <x-primary-button class="ms-3 bg-dentist-blue hover:bg-blue-600">
+                <x-primary-button class="ms-3 bg-premium-primary hover:bg-blue-600">
                     {{ __('messages.save') }}
                 </x-primary-button>
             </div>
