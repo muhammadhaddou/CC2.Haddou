@@ -17,6 +17,8 @@ class AppointmentController extends Controller
 
         if (auth()->user()->role === 'patient') {
             $query->where('patient_id', auth()->id());
+        } elseif (auth()->user()->role === 'doctor') {
+            $query->where('doctor_id', auth()->id());
         }
 
         if ($request->has('search') && $request->search != '') {

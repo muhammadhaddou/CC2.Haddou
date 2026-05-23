@@ -36,10 +36,12 @@
                         <div class="text-sm font-medium text-gray-500 truncate">{{ __('messages.patients') }}</div>
                         <div class="mt-1 text-3xl font-semibold text-gray-900">{{ $stats['total_patients'] }}</div>
                     </div>
-                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border">
-                        <div class="text-sm font-medium text-gray-500 truncate">{{ __('messages.doctors') }}</div>
-                        <div class="mt-1 text-3xl font-semibold text-gray-900">{{ $stats['total_doctors'] }}</div>
-                    </div>
+                    @if(auth()->user()->role === 'admin')
+                        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border">
+                            <div class="text-sm font-medium text-gray-500 truncate">{{ __('messages.doctors') }}</div>
+                            <div class="mt-1 text-3xl font-semibold text-gray-900">{{ $stats['total_doctors'] ?? 0 }}</div>
+                        </div>
+                    @endif
                 @endif
             </div>
 

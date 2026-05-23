@@ -22,6 +22,12 @@ Route::get('/dashboard', function () {
             'pending_appointments' => \App\Models\Appointment::where('patient_id', $user->id)->where('status', 'pending')->count(),
             'confirmed_appointments' => \App\Models\Appointment::where('patient_id', $user->id)->where('status', 'confirmed')->count(),
         ];
+    } elseif ($user->role === 'doctor') {
+        $stats = [
+            'total_appointments' => \App\Models\Appointment::where('doctor_id', $user->id)->count(),
+            'pending_appointments' => \App\Models\Appointment::where('doctor_id', $user->id)->where('status', 'pending')->count(),
+            'total_patients' => \App\Models\Appointment::where('doctor_id', $user->id)->distinct('patient_id')->count('patient_id'),
+        ];
     } else {
         $stats = [
             'total_appointments' => \App\Models\Appointment::count(),
