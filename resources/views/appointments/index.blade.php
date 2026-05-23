@@ -19,7 +19,7 @@
                     <a href="{{ route('appointments.index', ['status' => 'confirmed']) }}" class="px-4 py-2 whitespace-nowrap rounded-md text-sm font-medium transition {{ request('status') == 'confirmed' ? 'bg-green-500 text-white shadow' : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200' }}">Confirmés</a>
                     <a href="{{ route('appointments.index', ['status' => 'cancelled']) }}" class="px-4 py-2 whitespace-nowrap rounded-md text-sm font-medium transition {{ request('status') == 'cancelled' ? 'bg-red-500 text-white shadow' : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200' }}">Annulés</a>
                 </div>
-                <input type="text" id="search-input" placeholder="{{ __('messages.search') }}" class="w-full lg:w-1/4 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                <input type="text" id="search-input" value="{{ request('search') }}" placeholder="{{ __('messages.search') }}" class="w-full lg:w-1/4 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
             </div>
 
             <!-- Table -->
