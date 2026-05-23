@@ -18,7 +18,7 @@
     <body class="font-sans text-gray-900 antialiased bg-dentist-light">
         <div class="min-h-screen flex">
             <!-- Left side with image -->
-            <div class="hidden lg:block lg:w-1/2 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
+            <div class="hidden lg:block lg:w-1/2 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
                 <div class="absolute inset-0 bg-dentist-navy bg-opacity-80 flex items-center justify-center">
                     <div class="text-white text-center px-12">
                         <h1 class="text-5xl font-bold mb-6">Authentic Clinic Services</h1>
