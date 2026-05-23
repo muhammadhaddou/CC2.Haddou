@@ -56,6 +56,12 @@ class DatabaseSeeder extends Seeder
             RealServicesSeeder::class,
         ]);
         
-        // Note: No appointments generated yet to keep it clean, but ready for Moroccan data!
+        // 5. Generate Moroccan Patients
+        User::factory()->count(150)->create([
+            'role' => 'patient',
+        ]);
+
+        // 6. Generate 1500 Appointments
+        \App\Models\Appointment::factory()->count(1500)->create();
     }
 }
