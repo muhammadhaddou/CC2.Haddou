@@ -11,9 +11,15 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <!-- Search Bar -->
-            <div class="mb-6">
-                <input type="text" id="search-input" placeholder="{{ __('messages.search') }}" class="w-full md:w-1/3 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+            <!-- Filters and Search Bar -->
+            <div class="mb-6 flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
+                <div class="flex space-x-2 rtl:space-x-reverse overflow-x-auto pb-2 lg:pb-0">
+                    <a href="{{ route('appointments.index') }}" class="px-4 py-2 whitespace-nowrap rounded-md text-sm font-medium transition {{ !request('status') ? 'bg-dentist-navy text-white shadow' : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200' }}">Toutes</a>
+                    <a href="{{ route('appointments.index', ['status' => 'pending']) }}" class="px-4 py-2 whitespace-nowrap rounded-md text-sm font-medium transition {{ request('status') == 'pending' ? 'bg-yellow-500 text-white shadow' : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200' }}">Nouveaux (En attente)</a>
+                    <a href="{{ route('appointments.index', ['status' => 'confirmed']) }}" class="px-4 py-2 whitespace-nowrap rounded-md text-sm font-medium transition {{ request('status') == 'confirmed' ? 'bg-green-500 text-white shadow' : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200' }}">Confirmés</a>
+                    <a href="{{ route('appointments.index', ['status' => 'cancelled']) }}" class="px-4 py-2 whitespace-nowrap rounded-md text-sm font-medium transition {{ request('status') == 'cancelled' ? 'bg-red-500 text-white shadow' : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200' }}">Annulés</a>
+                </div>
+                <input type="text" id="search-input" placeholder="{{ __('messages.search') }}" class="w-full lg:w-1/4 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
             </div>
 
             <!-- Table -->
@@ -163,8 +169,12 @@
             searchInput.addEventListener('keyup', function () {
                 let query = searchInput.value;
 
+                let status = '{{ request('status') }}';
+                let params = { search: query };
+                if (status) params.status = status;
+
                 axios.get('{{ route('appointments.index') }}', {
-                    params: { search: query }
+                    params: params
                 })
                 .then(function (response) {
                     tableContainer.innerHTML = response.data.html;

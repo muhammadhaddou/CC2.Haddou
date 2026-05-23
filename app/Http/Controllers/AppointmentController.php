@@ -21,6 +21,10 @@ class AppointmentController extends Controller
             $query->where('doctor_id', auth()->id());
         }
 
+        if ($request->has('status') && in_array($request->status, ['pending', 'confirmed', 'cancelled'])) {
+            $query->where('status', $request->status);
+        }
+
         if ($request->has('search') && $request->search != '') {
             $search = $request->search;
             $query->whereHas('patient', function ($q) use ($search) {
