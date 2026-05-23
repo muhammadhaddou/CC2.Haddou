@@ -18,9 +18,9 @@
     <div class="bg-dentist-navy text-white text-xs py-2">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
             <div class="flex space-x-4 rtl:space-x-reverse">
-                <a href="tel:+123456789" class="hover:text-dentist-blue transition">+123 456 789</a>
+                <a href="tel:+212522000000" class="hover:text-dentist-blue transition">+212 5 22 00 00 00</a>
                 <span class="text-gray-400">|</span>
-                <a href="mailto:support@clinic.com" class="hover:text-dentist-blue transition">support@clinic.com</a>
+                <a href="mailto:contact@clinicoffshoring.ma" class="hover:text-dentist-blue transition">contact@clinicoffshoring.ma</a>
             </div>
             <div class="flex space-x-4 rtl:space-x-reverse">
                 <a href="#" class="hover:text-dentist-blue transition">Facebook</a>
