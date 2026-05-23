@@ -63,13 +63,13 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative py-32 md:py-48 flex items-center justify-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+    <section class="relative py-32 md:py-48 flex items-center justify-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
         <div class="absolute inset-0 bg-dentist-navy bg-opacity-80"></div>
         <div class="relative z-10 text-center text-white px-4 mt-8">
-            <h6 class="text-uppercase tracking-widest mb-4 text-dentist-blue font-semibold">DON'T LOOK FURTHER, THIS IS YOUR DENTIST</h6>
-            <h1 class="text-5xl md:text-7xl font-bold mb-6">Authentic Dental Service</h1>
+            <h6 class="text-uppercase tracking-widest mb-4 text-dentist-blue font-semibold">DON'T LOOK FURTHER, THIS IS YOUR CLINIC</h6>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Authentic Clinic Services</h1>
             <p class="text-lg md:text-xl font-light text-gray-200 max-w-2xl mx-auto mb-10">
-                Providing top quality service for your family. We are committed to giving you the best dental care and the most beautiful smile.
+                Providing top quality service for your family. We are committed to giving you the best medical care and the most beautiful smile.
             </p>
             @if (Route::has('login'))
                 @auth
