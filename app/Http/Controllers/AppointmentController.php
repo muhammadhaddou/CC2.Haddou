@@ -27,13 +27,15 @@ class AppointmentController extends Controller
 
         if ($request->has('search') && $request->search != '') {
             $search = $request->search;
-            $query->whereHas('patient', function ($q) use ($search) {
-                $q->where('name', 'like', '%' . $search . '%');
-            })->orWhereHas('doctor', function ($q) use ($search) {
-                $q->where('name', 'like', '%' . $search . '%');
-            })->orWhereHas('service', function ($q) use ($search) {
-                $q->where('name', 'like', '%' . $search . '%');
-            })->orWhere('date', 'like', '%' . $search . '%');
+            $query->where(function($q) use ($search) {
+                $q->whereHas('patient', function ($q2) use ($search) {
+                    $q2->where('name', 'like', '%' . $search . '%');
+                })->orWhereHas('doctor', function ($q2) use ($search) {
+                    $q2->where('name', 'like', '%' . $search . '%');
+                })->orWhereHas('service', function ($q2) use ($search) {
+                    $q2->where('name', 'like', '%' . $search . '%');
+                })->orWhere('date', 'like', '%' . $search . '%');
+            });
         }
 
         $appointments = $query->paginate(10);
