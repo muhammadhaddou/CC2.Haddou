@@ -20,7 +20,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}" class="text-2xl font-bold text-dentist-navy tracking-wider">
-                        <span class="text-dentist-blue">+</span> Clinic
+                        <span class="text-dentist-blue">Clinic</span>Offshoring
                     </a>
                 </div>
 

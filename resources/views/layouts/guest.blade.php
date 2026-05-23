@@ -32,7 +32,7 @@
                 <div>
                     <a href="/">
                         <div class="text-4xl font-bold text-dentist-navy mb-8 tracking-wider">
-                            <span class="text-dentist-blue">+</span> Clinic
+                            <span class="text-dentist-blue">Clinic</span>Offshoring
                         </div>
                     </a>
                 </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dentist Clinic - Welcome</title>
+    <title>ClinicOffshoring</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +35,7 @@
             <div class="flex justify-between h-20">
                 <div class="flex items-center">
                     <a href="/" class="text-3xl font-bold text-dentist-navy tracking-wider">
-                        <span class="text-dentist-blue">+</span> Clinic
+                        <span class="text-dentist-blue">Clinic</span>Offshoring
                     </a>
                 </div>
                 

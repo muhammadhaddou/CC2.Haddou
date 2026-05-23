@@ -1,4 +1,4 @@
-# Clinic Appointment Manager 🏥
+# ClinicOffshoring 🏥
 
 Un système complet de gestion de rendez-vous pour une clinique dentaire, développé avec Laravel 11. Ce projet inclut un tableau de bord, un système de réservation multilingue (Arabe, Français, Anglais), un design professionnel ("Dentist Theme"), ainsi qu'une API REST complète.
 
