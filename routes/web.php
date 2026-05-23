@@ -27,7 +27,7 @@ Route::get('/dashboard', function () {
             'total_appointments' => \App\Models\Appointment::count(),
             'pending_appointments' => \App\Models\Appointment::where('status', 'pending')->count(),
             'total_patients' => \App\Models\User::where('role', 'patient')->count(),
-            'total_doctors' => \App\Models\User::where('role', 'doctor')->where('email', '!=', 'admin@clinic.ma')->count(),
+            'total_doctors' => \App\Models\User::where('role', 'doctor')->count(),
         ];
     }
     return view('dashboard', compact('stats'));

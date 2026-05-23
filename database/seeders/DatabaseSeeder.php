@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Admin Clinic',
             'email' => 'admin@clinic.ma',
-            'role' => 'doctor',
+            'role' => 'admin',
         ]);
 
         // 2. Create Moroccan Doctors

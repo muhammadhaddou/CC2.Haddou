@@ -39,7 +39,7 @@ class AppointmentController extends Controller
         }
 
         $patients = User::where('role', 'patient')->get();
-        $doctors = User::where('role', 'doctor')->where('email', '!=', 'admin@clinic.ma')->get();
+        $doctors = User::where('role', 'doctor')->get();
         $services = Service::all();
 
         return view('appointments.index', compact('appointments', 'patients', 'doctors', 'services'));
