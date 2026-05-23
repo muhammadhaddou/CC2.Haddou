@@ -23,6 +23,14 @@ return [
     'language' => 'Language',
     'english' => 'English',
     'french' => 'French',
+    'arabic' => 'Arabic',
+    'select' => 'Select',
+    'service_consultation' => 'General Consultation',
+    'service_scaling' => 'Scaling & Polishing',
+    'service_extraction' => 'Tooth Extraction',
+    'service_whitening' => 'Teeth Whitening',
+    'service_implant' => 'Dental Implant',
+    'service_root_canal' => 'Root Canal Treatment',
 
     // Email strings
     'appointment_confirmation' => 'Appointment Confirmation',

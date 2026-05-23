@@ -1,59 +1,99 @@
-# CC2 Laravel Haddou - Medical Appointments Manager
+# Clinic Appointment Manager 🏥
 
-Complete web application to manage appointments for a medical clinic.
+Un système complet de gestion de rendez-vous pour une clinique dentaire, développé avec Laravel 11. Ce projet inclut un tableau de bord, un système de réservation multilingue (Arabe, Français, Anglais), un design professionnel ("Dentist Theme"), ainsi qu'une API REST complète.
 
-## Installation Instructions
+## 🚀 1. Instructions d'Installation
 
-1. Clone the repository.
-2. Install PHP dependencies:
-   ```bash
-   composer install
-   ```
-3. Install Node.js dependencies and build assets:
-   ```bash
-   npm install && npm run build
-   ```
-4. Setup environment variables:
-   ```bash
-   cp .env.example .env
-   php artisan key:generate
-   ```
-5. Run migrations and seeders:
-   ```bash
-   php artisan migrate --seed
-   ```
-6. Start the local server:
-   ```bash
-   php artisan serve
-   ```
+Suivez ces étapes pour cloner et lancer le projet sur votre machine locale :
 
-## Default Login Credentials
+```bash
+# 1. Cloner le repository
+git clone https://github.com/muhammadhaddou/CC2.Haddou.git
+cd CC2.Haddou
 
-**Admin/Doctor:**
-- Email: admin@example.com
-- Password: password
+# 2. Installer les dépendances PHP et Node.js
+composer install
+npm install
 
-**Test User:**
-- Email: test@example.com
-- Password: password
+# 3. Configurer l'environnement
+cp .env.example .env
+php artisan key:generate
 
-## API Documentation
+# 4. Configurer la base de données SQLite
+# Dans votre fichier .env, assurez-vous d'avoir :
+# DB_CONNECTION=sqlite
+# (et effacez DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD)
+touch database/database.sqlite
 
-The application exposes the following REST API endpoints:
+# 5. Compiler les assets (Tailwind CSS)
+npm run build
 
-### List Appointments
-`GET /api/appointments`
-Returns a JSON list of all appointments with their associated patient, doctor, and service details.
+# 6. Exécuter les migrations et injecter les données de test
+php artisan migrate:fresh --seed
 
-### Create an Appointment
-`POST /api/appointments`
-Allows creation of a new appointment.
-**Payload Requirements:**
-- `patient_id` (integer, required)
-- `doctor_id` (integer, required)
-- `service_id` (integer, required)
-- `date` (date, YYYY-MM-DD, required)
-- `time` (time, HH:MM, required)
-- `notes` (string, optional)
+# 7. Démarrer le serveur local
+php artisan serve
+```
 
-Returns the created appointment as JSON with HTTP 201 status code.
+---
+
+## 🔐 2. Identifiants de connexion par défaut
+
+Le système a été initialisé avec des données marocaines de test. Tous les comptes ont le même mot de passe par défaut : `password`
+
+| Rôle | Nom / Description | Email | Mot de passe |
+| :--- | :--- | :--- | :--- |
+| **Admin** | Administrateur (Gestion totale) | `admin@clinic.ma` | `password` |
+| **Docteur** | Dr. Amine Benali | `amine@clinic.ma` | `password` |
+| **Patient** | Hassan Oufkir | `hassan@gmail.com` | `password` |
+
+---
+
+## 📡 3. Documentation de l'API REST
+
+L'application expose des Endpoints d'API pour permettre à des systèmes externes d'interagir avec les rendez-vous.
+
+### Lister les rendez-vous (GET)
+- **URL :** `/api/appointments`
+- **Méthode :** `GET`
+- **Description :** Retourne la liste complète de tous les rendez-vous avec les informations détaillées du patient, du médecin et du service concerné.
+- **Réponse Succès (200 OK) :**
+```json
+{
+  "status": "success",
+  "data": [
+    {
+      "id": 1,
+      "patient_id": 5,
+      "doctor_id": 2,
+      "service_id": 1,
+      "status": "pending",
+      ...
+    }
+  ]
+}
+```
+
+### Créer un nouveau rendez-vous (POST)
+- **URL :** `/api/appointments`
+- **Méthode :** `POST`
+- **Description :** Permet à un système externe de soumettre une demande de rendez-vous. Le rendez-vous sera enregistré avec le statut par défaut `pending`.
+- **Headers :** `Content-Type: application/json`
+- **Body :**
+```json
+{
+  "patient_id": 5,
+  "doctor_id": 2,
+  "service_id": 1,
+  "date": "2026-06-01",
+  "time": "10:00"
+}
+```
+- **Réponse Succès (201 Created) :**
+```json
+{
+  "status": "success",
+  "message": "Appointment request created successfully",
+  "data": { ... }
+}
+```

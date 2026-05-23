@@ -14,8 +14,14 @@
             <tr class="bg-white border-b">
                 <td class="px-6 py-4 font-medium text-gray-900">{{ $appointment->patient->name }}</td>
                 <td class="px-6 py-4">{{ $appointment->doctor->name }}</td>
-                <td class="px-6 py-4">{{ $appointment->service->name }}</td>
-                <td class="px-6 py-4">{{ $appointment->date }} <br> <span class="text-xs text-gray-400">{{ $appointment->time }}</span></td>
+                <td class="px-6 py-4">{{ __($appointment->service->name) }}</td>
+                <td class="px-6 py-4">
+                    @if($appointment->date)
+                        {{ $appointment->date }} <br> <span class="text-xs text-gray-400">{{ $appointment->time }}</span>
+                    @else
+                        <span class="text-gray-400 italic">{{ __('messages.pending') }}</span>
+                    @endif
+                </td>
                 <td class="px-6 py-4">
                     <span class="px-2 py-1 text-xs rounded-full 
                         @if($appointment->status == 'confirmed') bg-green-100 text-green-800 
@@ -25,6 +31,9 @@
                     </span>
                 </td>
                 <td class="px-6 py-4 text-right">
+                    @if(auth()->user()->role !== 'patient')
+                        <button onclick="openEditModal({{ $appointment->id }}, '{{ $appointment->status }}', '{{ $appointment->date }}', '{{ $appointment->time }}', '{{ route('appointments.update', $appointment) }}')" class="font-medium text-blue-600 hover:underline ms-3">{{ __('messages.edit') }}</button>
+                    @endif
                     <button onclick="confirmDelete('{{ route('appointments.destroy', $appointment) }}')" class="font-medium text-red-600 hover:underline ms-3">{{ __('messages.delete') }}</button>
                 </td>
             </tr>

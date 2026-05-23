@@ -39,7 +39,7 @@ class AppointmentController extends Controller
         }
 
         $patients = User::where('role', 'patient')->get();
-        $doctors = User::where('role', 'doctor')->get();
+        $doctors = User::where('role', 'doctor')->where('email', '!=', 'admin@clinic.ma')->get();
         $services = Service::all();
 
         return view('appointments.index', compact('appointments', 'patients', 'doctors', 'services'));
@@ -51,16 +51,16 @@ class AppointmentController extends Controller
             'patient_id' => 'required|exists:users,id',
             'doctor_id' => 'required|exists:users,id',
             'service_id' => 'required|exists:services,id',
-            'date' => 'required|date',
-            'time' => 'required',
+            'date' => 'nullable|date',
+            'time' => 'nullable',
             'notes' => 'nullable|string'
         ]);
 
         $validated['status'] = 'pending';
         $appointment = Appointment::create($validated);
 
-        // Send confirmation email
-        Mail::to($appointment->patient->email)->queue(new AppointmentCreated($appointment));
+        // Email will be sent upon validation (confirmation)
+
 
         return redirect()->route('appointments.index')->with('success', __('messages.appointment_created_success'));
     }
@@ -69,11 +69,17 @@ class AppointmentController extends Controller
     {
         $validated = $request->validate([
             'status' => 'required|in:pending,confirmed,cancelled',
-            'date' => 'required|date',
-            'time' => 'required',
+            'date' => 'nullable|required_if:status,confirmed|date',
+            'time' => 'nullable|required_if:status,confirmed',
         ]);
 
+        $wasPending = $appointment->status !== 'confirmed';
+        
         $appointment->update($validated);
+
+        if ($wasPending && $validated['status'] === 'confirmed') {
+            Mail::to($appointment->patient->email)->queue(new AppointmentCreated($appointment));
+        }
 
         return redirect()->route('appointments.index')->with('success', __('messages.appointment_updated_success'));
     }

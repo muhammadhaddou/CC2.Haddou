@@ -12,8 +12,15 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Poppins', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                dentist: {
+                    navy: '#001D38',
+                    blue: '#007bff',
+                    light: '#f9f9ff',
+                }
+            }
         },
     },
 

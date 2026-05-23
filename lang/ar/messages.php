@@ -24,6 +24,13 @@ return [
     'english' => 'الإنجليزية',
     'french' => 'الفرنسية',
     'arabic' => 'العربية',
+    'select' => 'اختر',
+    'service_consultation' => 'استشارة عامة',
+    'service_scaling' => 'تنظيف وتلميع الأسنان',
+    'service_extraction' => 'خلع الأسنان',
+    'service_whitening' => 'تبييض الأسنان',
+    'service_implant' => 'زراعة الأسنان',
+    'service_root_canal' => 'علاج الجذور',
 
     // Email strings
     'appointment_confirmation' => 'تأكيد الموعد',
